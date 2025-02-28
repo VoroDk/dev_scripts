@@ -7,7 +7,7 @@ mkdir ~/.dev_scripts
 ```
 or just use the `git clone` function directly
 ```
-git clone git@github.com:VoroDk/dev_scripts.git .dev_scripts
+git clone git@github.com:VoroDk/dev_scripts.git ~/.dev_scripts
 ```
 
 ## .env File
