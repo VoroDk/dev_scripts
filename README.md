@@ -16,6 +16,7 @@ Create a .env file and add the following variables
 DB_PASSWORD=yourdbpw
 WP_USER_EMAIL=user@example.com
 WP_USER_PASSWORD=yousecrectpassword
+ACF_KEY=yourAcfProLicense
 ```
 
 ## Make sure scripts are executable
@@ -32,7 +33,7 @@ To easily call the scripts, add the following Shell Functions to your `~/.zshrc`
 
 ```
 wpsetup(){
-  ~/.dev_scripts/wpsetup.sh "$1"
+  ~/.dev_scripts/wpsetup.sh $1
 }
 
 wpdb(){
