@@ -3,16 +3,13 @@
 ## Clone repo
 Clone the github repository into a directory named `.dev_scripts` in your home folder:
 ```
-mkdir ~/.dev_scripts
-```
-or just use the `git clone` function directly
-```
-git clone git@github.com:VoroDk/dev_scripts.git ~/.dev_scripts
+git clone git@github.com:VoroDk/dev_scripts.git ~/.dev_scripts && cd ~/.dev_scripts && git remote rm origin
 ```
 
 ## .env File
 Create a .env file and add the following variables
 ```
+DB_USERNAME=yourdbuser
 DB_PASSWORD=yourdbpw
 WP_USER_EMAIL=user@example.com
 WP_USER_PASSWORD=yousecrectpassword

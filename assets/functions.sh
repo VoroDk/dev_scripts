@@ -19,7 +19,7 @@ prompt_user() {
 
 
 
-# Define text variables.
+# Define text color variables.
 BOLD='\033[1m'
 RED='\033[0;31m'
 GREEN='\033[0;92m'
