@@ -34,10 +34,10 @@ else
     exit 1
 fi
 
-# Check if DB_USERNAME is set
-if [ -z "$DB_USERNAME" ]; then
-    #echo "Error: DB_USERNAME not set in .env file!"
-    echo -e "${RED}Error:{NC} DB_USERNAME not set in .env file";
+# Check if DB_USER is set
+if [ -z "$DB_USER" ]; then
+    #echo "Error: DB_USER not set in .env file!"
+    echo -e "${RED}Error:{NC} DB_USER not set in .env file";
     exit 1
 fi
 
@@ -55,7 +55,7 @@ if [ -f "$CONFIG_FILE" ]; then
 else
 	# Create wp-config.php
 	echo -e "${CYAN}Creating wp-config.php for $PROJECT_NAME with DB_NAME $DB_NAME and DB_PASSWORD $DB_PASSWORD${NC}"
-	sed "s/{{DB_NAME}}/$DB_NAME/g; s/{{DB_USERNAME}}/$DB_USERNAME/g; s/{{DB_PASSWORD}}/$DB_PASSWORD/g; s/{{ACF_KEY}}/$ACF_KEY/g" "$CONFIG_TEMPLATE" > "$CONFIG_FILE"
+	sed "s/{{DB_NAME}}/$DB_NAME/g; s/{{DB_USER}}/$DB_USER/g; s/{{DB_PASSWORD}}/$DB_PASSWORD/g; s/{{ACF_KEY}}/$ACF_KEY/g" "$CONFIG_TEMPLATE" > "$CONFIG_FILE"
 	echo -e "${GREEN}Success:${NC} wp-config.php created successfully in $PROJECT_DIR!"
 fi
 

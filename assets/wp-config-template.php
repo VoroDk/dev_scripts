@@ -23,7 +23,7 @@
 define( 'DB_NAME', '{{DB_NAME}}' );
 
 /** Database username */
-define( 'DB_USER', '{{DB_USERNAME}}' );
+define( 'DB_USER', '{{DB_USER}}' );
 
 /** Database password */
 define( 'DB_PASSWORD', '{{DB_PASSWORD}}' );
