@@ -28,7 +28,9 @@ NEW_URL="http://$PROJECT_NAME.localhost"
 
 # Load environment variables
 if [ -f "$ENV_FILE" ]; then
-    export $(grep -v '^#' "$ENV_FILE" | xargs)
+    set -a
+    source "$ENV_FILE"
+    set +a
 else
     echo -e "${RED}Error:${NC} .env file not found in $SCRIPT_DIR!"
     exit 1
@@ -89,10 +91,12 @@ if prompt_user "Install and activate \"disable-emails\" plugin?"; then
 fi
 
 # User password.
-if [[ -n "$WP_USER_EMAIL" && -n "$WP_USER_PASSWORD" ]]; then
-	if prompt_user "Update password for user \"$WP_USER_EMAIL\" to \"$WP_USER_PASSWORD\"?"; then
-		wp user update $WP_USER_EMAIL --user_pass="$WP_USER_PASSWORD"
-	fi    
+if [[ -n "$WP_USER_EMAILS" && -n "$WP_USER_PASSWORD" ]]; then
+    for email in $WP_USER_EMAILS; do
+        if prompt_user "Update password for user \"$email\" to \"$WP_USER_PASSWORD\"?"; then
+            wp user update "$email" --user_pass="$WP_USER_PASSWORD"
+        fi
+    done
 fi
 
 echo -e "${GREEN}Success:${NC} Go make something beautiful!"
