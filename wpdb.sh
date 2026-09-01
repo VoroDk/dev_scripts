@@ -52,6 +52,11 @@ if prompt_user "Install and activate \"disable-emails\" plugin?"; then
   wp plugin install disable-emails --activate
 fi
 
+# Two-Factor.
+if wp plugin is-active two-factor 2>/dev/null; then
+  wp plugin deactivate two-factor
+fi
+
 # User password.
 if [[ -n "$WP_USER_EMAILS" && -n "$WP_USER_PASSWORD" ]]; then
     for email in $WP_USER_EMAILS; do
