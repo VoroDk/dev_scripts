@@ -23,6 +23,13 @@ else
     exit 1
 fi
 
+# Guard: only run against a local database.
+DB_HOST=`wp config get DB_HOST`
+if [[ ! "$DB_HOST" =~ ^(localhost|127\.0\.0\.1)(:.*)?$ ]]; then
+  echo -e "${RED}Error:${NC} DB_HOST is \"$DB_HOST\", which does not look like a local database. Aborting to avoid modifying a live site."
+  exit 1
+fi
+
 # Get the current working directory (wp project folder)
 PROJECT_DIR="$(pwd)"
 PROJECT_NAME="$(basename "$PROJECT_DIR")"

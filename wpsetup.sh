@@ -61,6 +61,13 @@ else
 	echo -e "${GREEN}Success:${NC} wp-config.php created successfully in $PROJECT_DIR!"
 fi
 
+# Guard: only run against a local database.
+DB_HOST=`wp config get DB_HOST`
+if [[ ! "$DB_HOST" =~ ^(localhost|127\.0\.0\.1)(:.*)?$ ]]; then
+	echo -e "${RED}Error:${NC} DB_HOST is \"$DB_HOST\", which does not look like a local database. Aborting to avoid modifying a live site."
+	exit 1
+fi
+
 OLD_URL=`wp option get siteurl`
 
 if [[ "$OLD_URL" != "$NEW_URL" ]]; then
