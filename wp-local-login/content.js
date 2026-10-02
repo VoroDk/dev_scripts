@@ -78,11 +78,11 @@
 
   function injectButton(creds, label) {
     const wrap = document.createElement("div");
-    wrap.className = "wpll-wrap";
+    wrap.id = "wpll-wrap";
 
     const btn = document.createElement("button");
     btn.type = "button";
-    btn.className = "wpll-btn";
+    btn.id = "wpll-btn";
     btn.textContent = label;
     btn.addEventListener("click", (e) => {
       if (!creds) {
@@ -93,7 +93,7 @@
     });
 
     const hint = document.createElement("div");
-    hint.className = "wpll-hint";
+    hint.id = "wpll-hint";
     hint.textContent = `${host} · shift-click to fill only · ⌥L`;
 
     wrap.appendChild(btn);
