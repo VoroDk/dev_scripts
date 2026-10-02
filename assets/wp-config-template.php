@@ -95,6 +95,9 @@ define( 'WP_ENVIRONMENT_TYPE', 'development' );
 // Define ACF PRO Licence.
 define( 'ACF_PRO_LICENSE', '{{ACF_KEY}}' );
 
+// Define Gravity Forms Licence.
+define( 'GF_LICENSE_KEY', '{{GF_LICENSE_KEY}}' );
+
 
 /* That's all, stop editing! Happy publishing. */
 

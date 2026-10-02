@@ -16,6 +16,7 @@ DB_PASSWORD=yourdbpw
 WP_USER_EMAIL=user@example.com
 WP_USER_PASSWORD=yousecrectpassword
 ACF_KEY=yourAcfProLicense
+GF_LICENSE_KEY=yourGravityFormsLicense
 ```
 
 ### Make sure scripts are executable
@@ -55,6 +56,7 @@ ___
 > - WP_USER_EMAIL
 > - WP_USER_PASSWORD
 > - ACF_KEY
+> - GF_LICENSE_KEY
 >
 > A database and the name of the database
 
@@ -69,7 +71,7 @@ wpsetup the-name-of-my-db
 ```
 #### Running Steps
 ##### 1) wp-config.php
-Creates a `wp-config.php` file within the directory the script is run and replaces `DB_USER`, `DB_PASSWORD` and `ACF_KEY` placeholders with the constants defined in `.env`.
+Creates a `wp-config.php` file within the directory the script is run and replaces `DB_USER`, `DB_PASSWORD`, `ACF_KEY` and `GF_LICENSE_KEY` placeholders with the constants defined in `.env`.
 
 If a `wp-config.php` already exists, this step is skipped.
 

@@ -60,7 +60,7 @@ if [ -f "$CONFIG_FILE" ]; then
 else
 	# Create wp-config.php
 	echo -e "${CYAN}Creating wp-config.php for $PROJECT_NAME with DB_NAME $DB_NAME and DB_PASSWORD $DB_PASSWORD${NC}"
-	sed "s/{{DB_NAME}}/$DB_NAME/g; s/{{DB_USER}}/$DB_USER/g; s/{{DB_PASSWORD}}/$DB_PASSWORD/g; s/{{ACF_KEY}}/$ACF_KEY/g" "$CONFIG_TEMPLATE" > "$CONFIG_FILE"
+	sed "s/{{DB_NAME}}/$DB_NAME/g; s/{{DB_USER}}/$DB_USER/g; s/{{DB_PASSWORD}}/$DB_PASSWORD/g; s/{{ACF_KEY}}/$ACF_KEY/g; s/{{GF_LICENSE_KEY}}/$GF_LICENSE_KEY/g" "$CONFIG_TEMPLATE" > "$CONFIG_FILE"
 	echo -e "${GREEN}Success:${NC} wp-config.php created successfully in $PROJECT_DIR!"
 fi
 
