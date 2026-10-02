@@ -3,6 +3,9 @@
 # Load external functions
 source ~/.dev_scripts/assets/functions.sh
 
+# Check the scripts repo for updates.
+check_for_updates
+
 # Check for wp-config.php.
 if [ ! -f wp-config.php ]; then
   echo -e "${RED}Warning:${NC} No wp-config.php found. Make a wp-config.php or consider using the wpsetup script instead."

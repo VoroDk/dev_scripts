@@ -3,6 +3,9 @@
 # Load external functions
 source ~/.dev_scripts/assets/functions.sh
 
+# Check the scripts repo for updates.
+check_for_updates
+
 # Ensure script is called with 1 argument
 if [ $# -ne 1 ]; then
     echo "Usage: wpsetup <database_name>"
