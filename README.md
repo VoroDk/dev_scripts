@@ -117,3 +117,17 @@ Runs the same as step 3 in `wpsetup.sh`
 
 ##### 3) Update user
 Runs the same as step 4 in `wpsetup.sh`
+
+___
+
+## WP Local Login (Chrome extension)
+
+Chrome extension that adds a "Log in as …" button to the WordPress login form on `*.localhost` dev sites. See [wp-local-login/README.md](wp-local-login/README.md) for details.
+
+### Install
+1. Go to `chrome://extensions` and enable **Developer mode**
+2. Click **Load unpacked** and pick the `~/.dev_scripts/wp-local-login` folder
+3. Open the extension's Options and enter your dev username/password
+
+### Updating
+Since the extension is loaded from this repo, pulling the latest changes also updates the extension — just hit the reload icon on the extension's card in `chrome://extensions` after a pull.
